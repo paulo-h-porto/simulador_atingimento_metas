@@ -15,13 +15,35 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        .stApp { background-color: #0a0a0a; color: #ffffff; }
-        .header { margin: 0px 0px 20px; background-color: #103024; padding: 15px; border-radius: 12px; text-align: center; }
-        .header h1 { color: white; margin: 0; }
-        .footer { background-color: #103024; padding: 10px; border-radius: 12px; text-align: center; margin-top: 40px; color: white; font-size: 0.9em; }
-        .block-container { border-radius: 0px !important; }
-        .controls-container { background-color: #1a1a1a; padding: 20px; border-radius: 12px; }
-        .section-title { text-align: center; margin-bottom: 20px; }
+        .stApp { 
+            background-color: #d7e1de; 
+            color: #ffffff; }
+        .header { 
+            margin: 0px 0px 20px; 
+            background-color: #103024; 
+            padding: 15px; 
+            border-radius: 12px; 
+            text-align: center; }
+        .header h1 { 
+            color: white; 
+            margin: 0; }
+        .footer { 
+            background-color: #103024; 
+            padding: 10px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin-top: 40px; 
+            color: white; 
+            font-size: 0.9em; }
+        .block-container { 
+            border-radius: 0px !important; }
+        .controls-container { 
+            background-color: #1a1a1a; 
+            padding: 20px; 
+            border-radius: 12px; }
+        .section-title { 
+            text-align: center; 
+            margin-bottom: 20px; }
         .metric-resultado {
             background-color: #1e3a5f !important;
             color: white !important;
@@ -67,13 +89,11 @@ col_controls, col_chart = st.columns([1, 3])  # 1:3 ratio
 
 # --------- CONTROLES NA COLUNA DA ESQUERDA ----------
 with col_controls:
-    # st.markdown('<div class="controls-container">', unsafe_allow_html=True)
     
     # Subtítulo centralizado para Parâmetros
     st.markdown('<div class="section-title"><h3>Parâmetros</h3></div>', unsafe_allow_html=True)
     
     # Container para os parâmetros
-    # st.markdown('<div class="params-container">', unsafe_allow_html=True)
     meta = st.number_input("Meta:", value=100.0, step=1.0)
     realizado = st.number_input("Realizado:", value=80.0, step=1.0)
     minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
