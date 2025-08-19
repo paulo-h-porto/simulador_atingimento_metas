@@ -95,7 +95,7 @@ st.markdown(
             font-weight: bold !important;
             color: #d7e1de !important;}
         .stSelectbox > div, .stNumberInput > div {
-            display: flex !important;
+            # display: flex !important;
             justify-content: center !important;}
         .stSelectbox > div > div, .stNumberInput > div > div {
             width: 100% !important;}
@@ -104,11 +104,11 @@ st.markdown(
             margin-bottom: 15px !important;}
         /* Estilo para o selectbox */
         .stSelectbox [data-testid="stSelectbox"] > div {
-            background-color: #3a3a3a !important;
+            background-color: #2b2d2c !important;
             color: white !important;
             border: 1px solid #555 !important;}
         .stNumberInput input {
-            background-color: #3a3a3a !important;
+            background-color: #2b2d2c !important;
             color: white !important;
             border: 1px solid #555 !important;
             text-align: center !important;}
