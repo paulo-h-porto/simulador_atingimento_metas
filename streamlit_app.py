@@ -45,29 +45,29 @@ if sentido == "Maior":
 else:  # Menor
     resultado = ((meta - realizado) / meta) + 1
 
-# --------- CÁLCULO DE ATINGIMENTO ----------
+# --------- CÁLCULO DE ATINGIMENTO CORRIGIDO ----------
 if sentido == "Maior":
-    m = (1 - 0) / (meta - minimo)  # inclinação da reta
-    b = 0 - m * minimo             # intercepto
+    # Reta: minimo -> 0%, meta -> 100%
+    m = 100 / (meta - minimo)        # inclinação
+    b = -m * minimo                  # intercepto
     atingimento_calc = b + m * realizado
 else:  # Menor
-    m = (0 - 1) / (meta - minimo)
-    b = 1 - m * minimo
+    # Reta invertida: minimo -> 100%, meta -> 0%
+    m = -100 / (meta - minimo)
+    b = 100 - m * minimo
     atingimento_calc = b + m * realizado
 
-atingimento = atingimento_calc * 100
-atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
+atingimento = max(0, min(atingimento_calc, 120))  # limitar entre 0 e 120
 
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
-# --------- CURVA ----------
+# --------- CURVA CORRIGIDA ----------
+x_curve = np.linspace(minimo, meta, 50)
 if sentido == 'Maior':
-    x_curve = np.linspace(minimo, meta + (meta - minimo) * 0.5, 50)
-    y_curve = np.interp(x_curve, [minimo, meta], [45, 100])
+    y_curve = m * x_curve + b
 else:
-    x_curve = np.linspace(meta - (minimo - meta) * 0.5, minimo, 50)
-    y_curve = np.interp(x_curve, [meta, minimo], [100, 45])
-
+    y_curve = m * x_curve + b
+    
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
 fig.add_trace(go.Scatter(x=[minimo], y=[0], mode='markers', name="Patamar Mínimo", marker=dict(color="red", size=10)))
