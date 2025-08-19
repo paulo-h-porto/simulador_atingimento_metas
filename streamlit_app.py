@@ -72,25 +72,25 @@ st.markdown('<div class="header"><h1>Simulação de Metas 2025</h1></div>', unsa
 # --------- INPUTS ----------
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    meta = st.number_input("Meta:", value=100.0, step=0.1)
+    meta = st.number_input("Meta:", value=100.0, step=1.0)
 with col2:
-    minimo = st.number_input("Patamar Mínimo:", value=70.0, step=0.1)
+    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
 with col3:
-    resultado = st.number_input("Resultado:", value=85.0, step=0.1)
+    resultado = st.number_input("Resultado:", value=80.0, step=1.0)
 with col4:
     sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
 
 # --------- CÁLCULO ----------
 if sentido == 'Maior':
     if resultado >= meta:
-        atingimento = 100
+        atingimento = 120
     elif resultado <= minimo:
         atingimento = 0
     else:
         atingimento = ((resultado - minimo) / (meta - minimo)) * 100
 else:
     if resultado <= meta:
-        atingimento = 100
+        atingimento = 120
     elif resultado >= minimo:
         atingimento = 0
     else:
