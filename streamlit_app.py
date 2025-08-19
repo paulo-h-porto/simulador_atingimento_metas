@@ -16,7 +16,7 @@ st.markdown(
     """
     <style>
         .stApp { 
-            background-color: #d7e1de; 
+            background-color: #0a0a0a; 
             color: #ffffff; }
         .header { 
             margin: 0px 0px 20px; 
