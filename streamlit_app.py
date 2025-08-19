@@ -58,10 +58,10 @@ st.markdown(
             }
         .metric-label-resultado {
             # font-size: 1.0em;
-            # font-weight: bold;
+            font-weight: bold;
             color: white; }
         .metric-value-resultado {
-            font-size: 1.0em;
+            font-size: 1.2em;
             font-weight: bold;
             color: white; }
         .metric-atingimento {
