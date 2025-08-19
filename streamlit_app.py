@@ -108,7 +108,6 @@
 # st.subheader("Simulação de Atingimento de Meta")
 # st.plotly_chart(fig, use_container_width=True)
 
-
 import streamlit as st
 import plotly.graph_objects as go
 import numpy as np
@@ -132,6 +131,7 @@ st.markdown(
         .block-container { border-radius: 0px !important; }
         .stMetric { margin: 15px 0px; border-radius: 12px; background-color: #103024; color: #103024; font-weight: bold; padding: 12px; border-radius: 0px !important; }
         .controls-container { background-color: #1a1a1a; padding: 20px; border-radius: 12px; }
+        .chart-title { text-align: center; margin-bottom: 20px; }
     </style>
     """,
     unsafe_allow_html=True
@@ -148,10 +148,10 @@ with col_controls:
     st.markdown('<div class="controls-container">', unsafe_allow_html=True)
     
     st.subheader("Parâmetros")
-    sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
-    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
     meta = st.number_input("Meta:", value=100.0, step=1.0)
     realizado = st.number_input("Realizado:", value=80.0, step=1.0)
+    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
+    sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
     
     # --------- CÁLCULO DE RESULTADO ----------
     if realizado == meta:
@@ -200,7 +200,8 @@ with col_chart:
         height=500  # Ajuste a altura para melhor visualização
     )
 
-    st.subheader("Simulação de Atingimento de Meta")
+    # Subtítulo centralizado acima do gráfico
+    st.markdown('<div class="chart-title"><h3>Simulação de Atingimento de Meta</h3></div>', unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)
 
 # --------- FOOTER ----------
