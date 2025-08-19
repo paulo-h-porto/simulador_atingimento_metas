@@ -45,39 +45,36 @@ st.markdown(
         .section-title { 
             text-align: center; 
             margin-bottom: 20px; 
-            background-color: #a3bbb6;}
+            background-color: #a3bbb6;
+            border-radius: 12px; 
+            color: #2b2d2c; }
         .metric-resultado {
             background-color: #1e3a5f !important;
             color: white !important;
             padding: 15px;
             border-radius: 10px;
             border-left: 5px solid #4a90e2;
-            margin: 15px 0px;
-        }
+            margin: 15px 0px; }
         .metric-atingimento {
             background-color: #2d5016 !important;
             color: white !important;
             padding: 15px;
             border-radius: 10px;
             border-left: 5px solid #7cb342;
-            margin: 15px 0px;
-        }
+            margin: 15px 0px; }
         .metric-label {
             font-size: 1.1em;
             font-weight: bold;
-            color: #e0e0e0;
-        }
+            color: #e0e0e0; }
         .metric-value {
             font-size: 1.8em;
             font-weight: bold;
-            color: white;
-        }
+            color: white; }
         .params-container {
             background-color: #2a2a2a;
             padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
-        }
+            margin-bottom: 20px; }
     </style>
     """,
     unsafe_allow_html=True
