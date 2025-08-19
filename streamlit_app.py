@@ -180,6 +180,9 @@
 # st.markdown('<div class="footer">⚠️ Este painel é uma simulação e não substitui os resultados oficiais.</div>', unsafe_allow_html=True)
 
 
+
+
+
 import streamlit as st
 import plotly.graph_objects as go
 import numpy as np
