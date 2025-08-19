@@ -71,7 +71,7 @@ st.markdown(
             color: white !important;
             padding: 10px;
             border-radius: 10px;
-            border-left: 5px solid #7cb342;
+            border-left: 5px solid #169a00;
             margin: 10px 0px; }
         .metric-label-atingimento {
             font-size: 1.1em;
@@ -154,7 +154,7 @@ with col_controls:
 # --------- GRÁFICO NA COLUNA DA DIREITA ----------
 with col_chart:
     # --------- CURVA CORRIGIDA PARA PLOT ---------
-    x_curve = np.linspace(minimo, meta, 50)
+    x_curve = np.linspace(minimo, 120, 50)
     y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (meta - minimo)
         
     fig = go.Figure()
