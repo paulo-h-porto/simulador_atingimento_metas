@@ -69,11 +69,12 @@ atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
 
-# --------- CURVA CORRIGIDA ----------
-x_curve = np.linspace(minimo, meta, 50)
+# --------- CURVA CORRIGIDA PARA PLOT ---------
 if sentido == "Maior":
+    x_curve = np.linspace(minimo, meta, 50)
     y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (meta - minimo)
-else:
+else:  # Menor
+    x_curve = np.linspace(meta, minimo, 50)  # inverte o eixo X
     y_curve = y_meta + (y_minimo - y_meta) * (x_curve - meta) / (minimo - meta)
     
 fig = go.Figure()
@@ -82,15 +83,15 @@ fig.add_trace(go.Scatter(x=[minimo], y=[0], mode='markers', name="Patamar Mínim
 fig.add_trace(go.Scatter(x=[meta], y=[100], mode='markers', name="Meta", marker=dict(color="green", size=10)))
 fig.add_trace(go.Scatter(x=[realizado], y=[atingimento], mode='markers', name="Resultado", marker=dict(color="purple", size=10)))
 
-# --------- LAYOUT DO GRÁFICO ----------
-x_min = minimo - 10  # limite inferior do eixo X (exemplo: 10 unidades abaixo do patamar mínimo)
-x_max = max(meta + 10, realizado + 10)  # limite superior do eixo X
+# Ajuste dos limites do eixo X
+x_min = min(meta, minimo) - 5
+x_max = max(meta, minimo) + 5
 
 fig.update_layout(
     xaxis_title="Valor do Indicador",
     yaxis_title="Atingimento (%)",
     xaxis=dict(range=[x_min, x_max], showgrid=False),
-    yaxis=dict(range=[0, max(120, atingimento + 10)], showgrid=False),
+    yaxis=dict(range=[0, 120], showgrid=False),
     plot_bgcolor="white"
 )
 
