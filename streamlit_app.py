@@ -58,8 +58,13 @@ if sentido == "Menor":
     m = -m
     b = y_meta - m * minimo
 
-atingimento = b + m * realizado
+if realizado < minimo:
+    atingimento = 0
+else:
+    atingimento = b + m * realizado
+    
 atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
+
 
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
