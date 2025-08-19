@@ -88,30 +88,6 @@ st.markdown(
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px; }
-        .stSelectbox > label, .stNumberInput > label {
-            text-align: center !important;
-            # display: block !important;
-            width: 100% !important;
-            font-weight: bold !important;
-            color: #d7e1de !important;}
-        .stSelectbox > div, .stNumberInput > div {
-            # display: flex !important;
-            justify-content: center !important;}
-        .stSelectbox > div > div, .stNumberInput > div > div {
-            width: 100% !important;}
-        .stSelectbox, .stNumberInput {
-            text-align: center !important;
-            margin-bottom: 15px !important;}
-        /* Estilo para o selectbox */
-        .stSelectbox [data-testid="stSelectbox"] > div {
-            # background-color: #2b2d2c !important;
-            # color: white !important;
-            border: 1px solid #555 !important;}
-        .stNumberInput input {
-            background-color: #2b2d2c !important;
-            # color: white !important;
-            border: 1px solid #555 !important;
-            text-align: center !important;}
     </style>
     """,
     unsafe_allow_html=True
