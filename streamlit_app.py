@@ -57,9 +57,9 @@ y_meta = 100   # Meta = 100%
 
 if resultado < minimo:
     atingimento = 0
+else:
     m = (y_meta - y_minimo) / (y_meta - minimo)
     b = y_minimo - m * minimo
-else:
     atingimento = b + m * resultado
     
 # else:  # melhor para baixo
