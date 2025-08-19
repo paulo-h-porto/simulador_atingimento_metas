@@ -174,7 +174,7 @@ with col_chart:
         xaxis=dict(range=[0, 140], showgrid=False),
         yaxis=dict(range=[0, 140], showgrid=False),
         plot_bgcolor="white",
-        height=500  # Ajuste a altura para melhor visualização
+        height=700  # Ajuste a altura para melhor visualização
     )
 
     # Subtítulo centralizado acima do gráfico
