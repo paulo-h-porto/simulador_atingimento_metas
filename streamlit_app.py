@@ -19,6 +19,7 @@ st.markdown(
         .header {
             background-color: #103024;
             padding: 15px;
+            margin-botton: 15px;
             border-radius: 12px; /* só header arredondado */
             text-align: center;
         }
@@ -45,7 +46,8 @@ st.markdown(
 
         /* Caixa do metric */
         .stMetric {
-            background-color: #169a00;
+            border-radius: 12px;
+            background-color: #103024;
             color: #103024;
             font-weight: bold;
             padding: 12px;
