@@ -49,11 +49,11 @@ st.markdown(
             border-radius: 12px; 
             color: #2b2d2c; }
         .metric-resultado {
-            # background-color: #1e3a5f !important;
+            background-color: #1e3a5f !important;
             color: #2b2d2c;
-            # padding: 15px;
+            padding: 3px;
             # border-radius: 10px;
-            # border-left: 5px solid #4a90e2;
+            border-left: 2px solid #4a90e2;
             # margin: 15px 0px; 
             }
         .metric-label-resultado {
