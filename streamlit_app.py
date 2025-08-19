@@ -83,13 +83,14 @@ fig.add_trace(go.Scatter(x=[meta], y=[100], mode='markers', name="Meta", marker=
 fig.add_trace(go.Scatter(x=[realizado], y=[atingimento], mode='markers', name="Resultado", marker=dict(color="purple", size=10)))
 
 # --------- LAYOUT DO GRÁFICO ----------
-y_max = max(120, atingimento + 10)
-y_min = max(0, minimo - 10)
+x_min = minimo - 10  # limite inferior do eixo X (exemplo: 10 unidades abaixo do patamar mínimo)
+x_max = max(meta + 10, realizado + 10)  # limite superior do eixo X
+
 fig.update_layout(
     xaxis_title="Valor do Indicador",
     yaxis_title="Atingimento (%)",
-    yaxis=dict(range=[y_min, y_max], showgrid=False),
-    xaxis=dict(showgrid=False),
+    xaxis=dict(range=[x_min, x_max], showgrid=False),
+    yaxis=dict(range=[0, max(120, atingimento + 10)], showgrid=False),
     plot_bgcolor="white"
 )
 
