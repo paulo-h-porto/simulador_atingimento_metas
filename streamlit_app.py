@@ -70,10 +70,10 @@ with col_controls:
     # st.markdown('<div class="controls-container">', unsafe_allow_html=True)
     
     # Subtítulo centralizado para Parâmetros
-    # st.markdown('<div class="section-title"><h3>Parâmetros</h3></div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"><h3>Parâmetros</h3></div>', unsafe_allow_html=True)
     
     # Container para os parâmetros
-    st.markdown('<div class="params-container">', unsafe_allow_html=True)
+    # st.markdown('<div class="params-container">', unsafe_allow_html=True)
     meta = st.number_input("Meta:", value=100.0, step=1.0)
     realizado = st.number_input("Realizado:", value=80.0, step=1.0)
     minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
