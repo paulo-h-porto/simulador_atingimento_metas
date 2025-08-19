@@ -76,8 +76,10 @@ st.metric("Atingimento", f"{atingimento:.2f}%")
 
 # --------- CURVA CORRIGIDA PARA PLOT ---------
 # if sentido == "Maior":
-    x_curve = np.linspace(minimo, meta, 50)
-    y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (meta - minimo)
+
+x_curve = np.linspace(minimo, meta, 50)
+y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (meta - minimo)
+
 # else:  # Menor
 #     x_curve = np.linspace(meta, minimo, 50)  # inverte o eixo X
 #     y_curve = y_meta + (y_minimo - y_meta) * (x_curve - meta) / (minimo - meta)
