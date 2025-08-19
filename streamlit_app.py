@@ -40,7 +40,7 @@ st.markdown(
             border-radius: 0px !important; }
         .controls-container { 
             background-color: #1a1a1a; 
-            padding: 20px; 
+            padding: 10px; 
             border-radius: 12px; }
         .section-title { 
             text-align: center; 
