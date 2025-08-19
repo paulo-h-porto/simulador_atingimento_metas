@@ -74,14 +74,13 @@ else:
 atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
-
 # --------- CURVA CORRIGIDA PARA PLOT ---------
-if sentido == "Maior":
+# if sentido == "Maior":
     x_curve = np.linspace(minimo, meta, 50)
     y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (meta - minimo)
-else:  # Menor
-    x_curve = np.linspace(meta, minimo, 50)  # inverte o eixo X
-    y_curve = y_meta + (y_minimo - y_meta) * (x_curve - meta) / (minimo - meta)
+# else:  # Menor
+#     x_curve = np.linspace(meta, minimo, 50)  # inverte o eixo X
+#     y_curve = y_meta + (y_minimo - y_meta) * (x_curve - meta) / (minimo - meta)
     
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
