@@ -48,21 +48,14 @@ st.markdown(
             background-color: #d7e1de;
             border-radius: 12px; 
             color: #2b2d2c; }
-        # .metric-resultado {
-        #     background-color: #1e3a5f !important;
-        #     color: #2b2d2c;
-        #     padding: 3px;
-        #     # border-radius: 10px;
-        #     border-left: 2px solid #4a90e2;
-        #     # margin: 15px 0px; 
-        #     }
         .metric-resultado {
             background-color: #a3bbb6 !important;
             color: white !important;
-            padding: 15px;
+            # padding: 15px;
             border-radius: 10px;
             border-left: 5px solid #d7e1de;
-            margin: 15px 0px; }
+            # margin: 15px 0px; 
+            }
         .metric-label-resultado {
             # font-size: 1.0em;
             # font-weight: bold;
