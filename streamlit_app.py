@@ -3,7 +3,6 @@ import plotly.graph_objects as go
 import numpy as np
 
 # --------- CONFIG GERAL ----------
-# st.set_page_config(page_title="Simulação de Metas 2025", layout="centered")
 st.set_page_config(
     page_title="Simulação de Metas 2025",
     page_icon="📊",
@@ -11,14 +10,13 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-
 # --------- CSS CUSTOMIZADO ----------
 st.markdown(
     """
     <style>
         /* Fundo da página */
         .stApp {
-            background-color: #0a0a0a; /* fundo escuro elegante */
+            background-color: #0a0a0a;
             color: #ffffff;
         }
         
@@ -27,7 +25,7 @@ st.markdown(
             margin: 0px 0px 20px;
             background-color: #103024;
             padding: 15px;
-            border-radius: 12px; /* só header arredondado */
+            border-radius: 12px;
             text-align: center;
         }
         .header h1 {
@@ -39,7 +37,7 @@ st.markdown(
         .footer {
             background-color: #103024;
             padding: 10px;
-            border-radius: 12px; /* só footer arredondado */
+            border-radius: 12px;
             text-align: center;
             margin-top: 40px;
             color: white;
@@ -48,7 +46,7 @@ st.markdown(
 
         /* Caixas internas (inputs, métricas, gráfico) */
         .block-container {
-            border-radius: 0px !important; /* sem borda arredondada */
+            border-radius: 0px !important;
         }
 
         /* Caixa do metric */
@@ -80,21 +78,26 @@ with col3:
 with col4:
     sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
 
-# --------- CÁLCULO ----------
-if sentido == 'Maior':
-    if resultado >= meta:
+# --------- CÁLCULO DE ATINGIMENTO ----------
+# Fórmula baseada na lógica do Google Sheets
+if sentido == "Maior":
+    m = (1 - 0) / (meta - minimo)  # inclinação da reta
+    b = 0 - m * minimo             # intercepto
+    atingimento_calc = b + m * resultado
+    atingimento = atingimento_calc * 100
+    if atingimento > 120:
         atingimento = 120
-    elif resultado <= minimo:
+    elif atingimento < 45:
         atingimento = 0
-    else:
-        atingimento = ((resultado - minimo) / (meta - minimo)) * 100
-else:
-    if resultado <= meta:
+else:  # sentido "Menor"
+    m = (0 - 1) / (meta - minimo)
+    b = 1 - m * minimo
+    atingimento_calc = b + m * resultado
+    atingimento = atingimento_calc * 100
+    if atingimento > 120:
         atingimento = 120
-    elif resultado >= minimo:
+    elif atingimento < 45:
         atingimento = 0
-    else:
-        atingimento = ((minimo - resultado) / (minimo - meta)) * 100
 
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
@@ -112,11 +115,13 @@ fig.add_trace(go.Scatter(x=[minimo], y=[0], mode='markers', name="Patamar Mínim
 fig.add_trace(go.Scatter(x=[meta], y=[100], mode='markers', name="Meta", marker=dict(color="green", size=10)))
 fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="Resultado", marker=dict(color="purple", size=10)))
 
+# --------- LAYOUT DO GRÁFICO ----------
+y_max = max(120, atingimento + 10)  # ajusta dinamicamente o eixo Y
 fig.update_layout(
-    xaxis_title="Realizado do Indicador",
+    xaxis_title="Valor do Indicador",
     yaxis_title="Atingimento (%)",
-    yaxis=dict(range=[-5, 125], showgrid=False),  # remove linhas de grade horizontais
-    xaxis=dict(showgrid=False),                   # remove linhas de grade verticais
+    yaxis=dict(range=[-5, y_max], showgrid=False),
+    xaxis=dict(showgrid=False),
     plot_bgcolor="white"
 )
 
