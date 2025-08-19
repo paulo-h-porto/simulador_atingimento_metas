@@ -104,10 +104,12 @@ st.metric("Atingimento", f"{atingimento:.2f}%")
 # --------- CURVA ----------
 if sentido == 'Maior':
     x_curve = np.linspace(minimo, meta + (meta - minimo) * 0.5, 50)
-    y_curve = np.interp(x_curve, [minimo, meta], [0, 100])
+    # cálculo linear entre patamar mínimo e meta
+    y_curve = np.interp(x_curve, [minimo, meta], [45, 100])
 else:
     x_curve = np.linspace(meta - (minimo - meta) * 0.5, minimo, 50)
-    y_curve = np.interp(x_curve, [meta, minimo], [100, 0])
+    y_curve = np.interp(x_curve, [meta, minimo], [100, 45])
+
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
