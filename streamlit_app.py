@@ -61,32 +61,61 @@ atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
 # --------- CURVA ----------
+# --------- CURVA E PONTOS COM VISUAL DO GRÁFICO ----------
+fig = go.Figure()
+
+# Curva de atingimento
 if sentido == 'Maior':
     x_curve = np.linspace(minimo, meta + (meta - minimo) * 0.5, 50)
-    y_curve = np.interp(x_curve, [minimo, meta], [45, 100])
+    y_curve = np.interp(x_curve, [minimo, meta], [minimo, 100])
 else:
     x_curve = np.linspace(meta - (minimo - meta) * 0.5, minimo, 50)
-    y_curve = np.interp(x_curve, [meta, minimo], [100, 45])
+    y_curve = np.interp(x_curve, [meta, minimo], [100, minimo])
 
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
-fig.add_trace(go.Scatter(x=[minimo], y=[0], mode='markers', name="Patamar Mínimo", marker=dict(color="red", size=10)))
-fig.add_trace(go.Scatter(x=[meta], y=[100], mode='markers', name="Meta", marker=dict(color="green", size=10)))
-fig.add_trace(go.Scatter(x=[realizado], y=[atingimento], mode='markers', name="Resultado", marker=dict(color="purple", size=10)))
+fig.add_trace(go.Scatter(
+    x=x_curve,
+    y=y_curve,
+    mode='lines',
+    name="Reta do Atingimento",
+    line=dict(color="#1f774e", width=3)
+))
 
-# --------- LAYOUT DO GRÁFICO ----------
-y_max = max(120, atingimento + 10)
-y_min = max(0, minimo - 10)
+# Pontos: Patamar Mínimo, Meta e Realizado
+fig.add_trace(go.Scatter(
+    x=[minimo], y=[minimo if sentido=="Maior" else 100],
+    mode='markers+text',
+    name="Patamar Mínimo",
+    marker=dict(color="red", size=12),
+    text=[f"{int(minimo)}%"], textposition="top center"
+))
+fig.add_trace(go.Scatter(
+    x=[meta], y=[100],
+    mode='markers+text',
+    name="Meta",
+    marker=dict(color="green", size=12),
+    text=["100%"], textposition="top center"
+))
+fig.add_trace(go.Scatter(
+    x=[realizado], y=[atingimento],
+    mode='markers+text',
+    name="Realizado",
+    marker=dict(color="blue", size=12),
+    text=[f"{atingimento:.0f}%"], textposition="top center"
+))
+
+# Layout
 fig.update_layout(
-    xaxis_title="Valor do Indicador",
-    yaxis_title="Atingimento (%)",
-    yaxis=dict(range=[y_min, y_max], showgrid=False),
-    xaxis=dict(showgrid=False),
-    plot_bgcolor="white"
+    title="Reta do Atingimento",
+    xaxis_title="Resultado",
+    yaxis_title="Atingimento",
+    xaxis=dict(tickformat=".0%", range=[0, 1.2*meta/100]),
+    yaxis=dict(tickformat=".0%", range=[0, 120]),
+    plot_bgcolor="white",
+    showlegend=False
 )
 
-st.subheader("Simulação de Atingimento de Meta")
 st.plotly_chart(fig, use_container_width=True)
+
 
 # --------- FOOTER ----------
 st.markdown('<div class="footer">⚠️ Este painel é uma simulação e não substitui os resultados oficiais.</div>', unsafe_allow_html=True)
