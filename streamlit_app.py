@@ -135,8 +135,8 @@ with col_controls:
 
     if resultado < minimo:
         resultado_120 = resultado
-    else: resultado_120 = (120-b)/m
-
+    else: resultado_120 = (120-(y_minimo - ((y_meta - y_minimo) / (y_meta - minimo)) * minimo))/((y_meta - y_minimo) / (y_meta - minimo))
+        
     if resultado < minimo:
         resultado_120_graf = (120-b)/m
     else: resultado_120_graf = (120-b)/m
