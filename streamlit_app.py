@@ -115,7 +115,7 @@ fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="R
 fig.update_layout(
     xaxis_title="Valor do Indicador",
     yaxis_title="Atingimento (%)",
-    yaxis=dict(range=[-5, 105]),
+    yaxis=dict(range=[-5, 125]),
     plot_bgcolor="white"
 )
 
