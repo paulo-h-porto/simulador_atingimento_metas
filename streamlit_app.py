@@ -138,7 +138,7 @@ with col_controls:
     else: resultado_120 = (120-b)/m
 
     if resultado < minimo:
-        resultado_120_graf = 120
+        resultado_120_graf = (120-b)/m
     else: resultado_120_graf = (120-b)/m
 
     resultado = max(0, min(resultado, resultado_120))  # limitar entre 0 e 120
