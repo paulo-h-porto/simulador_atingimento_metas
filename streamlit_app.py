@@ -134,7 +134,7 @@ with col_controls:
 
 
     if resultado < minimo:
-        resultado_120 = 0
+        resultado_120 = resultado
     else: resultado_120 = (120-b)/m
 
     if resultado < minimo:
