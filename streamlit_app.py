@@ -58,10 +58,12 @@ st.markdown(
             }
         .metric-label-resultado {
             # font-size: 1.0em;
+            text-align: center; 
             font-weight: bold;
             color: white; }
         .metric-value-resultado {
             font-size: 1.2em;
+            text-align: center; 
             font-weight: bold;
             color: white; }
         .metric-atingimento {
@@ -73,10 +75,12 @@ st.markdown(
             margin: 15px 0px; }
         .metric-label-atingimento {
             font-size: 1.1em;
+            text-align: center; 
             font-weight: bold;
             color: white; }
         .metric-value-atingimento {
             font-size: 1.8em;
+            text-align: center; 
             font-weight: bold;
             color: white; }
         .params-container {
