@@ -24,6 +24,7 @@ st.markdown(
         
         /* Header */
         .header {
+            margin: 0px 0px 20px;
             background-color: #103024;
             padding: 15px;
             border-radius: 12px; /* só header arredondado */
