@@ -178,7 +178,7 @@ with col_chart:
     )
 
     # Subtítulo centralizado acima do gráfico
-    st.markdown('<div class="section-title"><h3>Simulação de Atingimento de Meta</h3></div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"><h3>Atingimento de Meta</h3></div>', unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)
 
 # --------- FOOTER ----------
