@@ -119,10 +119,11 @@ fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="R
 
 # --------- LAYOUT DO GRÁFICO ----------
 y_max = max(120, atingimento + 10)  # ajusta dinamicamente o eixo Y
+y_min = max(0, minimo - 10)  # ajusta dinamicamente o eixo Y
 fig.update_layout(
     xaxis_title="Valor do Indicador",
     yaxis_title="Atingimento (%)",
-    yaxis=dict(range=[-5, y_max], showgrid=False),
+    yaxis=dict(range=[y_min, y_max], showgrid=False),
     xaxis=dict(showgrid=False),
     plot_bgcolor="white"
 )
