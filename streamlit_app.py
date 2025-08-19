@@ -136,7 +136,11 @@ with col_controls:
     if resultado < minimo:
         resultado_120 = 0
     else: resultado_120 = (120-b)/m
-    
+
+    if resultado < minimo:
+        resultado_120_graf = 120
+    else: resultado_120_graf = (120-b)/m
+
     resultado = max(0, min(resultado, resultado_120))  # limitar entre 0 e 120
 
     # Métrica personalizada para Resultado
@@ -162,7 +166,7 @@ with col_controls:
 # --------- GRÁFICO NA COLUNA DA DIREITA ----------
 with col_chart:
     # --------- CURVA CORRIGIDA PARA PLOT ---------
-    x_curve = np.linspace(minimo, resultado_120, 50)
+    x_curve = np.linspace(minimo, resultado_120_graf, 50)
     y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (100 - minimo)
         
     fig = go.Figure()
