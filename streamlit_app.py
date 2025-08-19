@@ -90,7 +90,7 @@ st.markdown(
             margin-bottom: 20px; }
         .stSelectbox > label, .stNumberInput > label {
             text-align: center !important;
-            display: block !important;
+            # display: block !important;
             width: 100% !important;
             font-weight: bold !important;
             color: #d7e1de !important;}
@@ -104,12 +104,12 @@ st.markdown(
             margin-bottom: 15px !important;}
         /* Estilo para o selectbox */
         .stSelectbox [data-testid="stSelectbox"] > div {
-            background-color: #2b2d2c !important;
-            color: white !important;
+            # background-color: #2b2d2c !important;
+            # color: white !important;
             border: 1px solid #555 !important;}
         .stNumberInput input {
             background-color: #2b2d2c !important;
-            color: white !important;
+            # color: white !important;
             border: 1px solid #555 !important;
             text-align: center !important;}
     </style>
