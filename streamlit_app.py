@@ -140,7 +140,7 @@ with col_controls:
         atingimento = b + m * resultado
 
     resultado_120 = (120-b)/m
-    resultado = max(0, min(resultado, 120))  # limitar entre 0 e 120
+    resultado = max(0, min(resultado, resultado_120))  # limitar entre 0 e 120
     atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
     
     # Métrica personalizada para Atingimento
