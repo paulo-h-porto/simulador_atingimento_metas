@@ -69,10 +69,10 @@ st.markdown(
         .metric-atingimento {
             background-color: #2d5016 !important;
             color: white !important;
-            padding: 15px;
+            padding: 10px;
             border-radius: 10px;
             border-left: 5px solid #7cb342;
-            margin: 15px 0px; }
+            margin: 10px 0px; }
         .metric-label-atingimento {
             font-size: 1.1em;
             text-align: center; 
