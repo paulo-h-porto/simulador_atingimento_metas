@@ -120,16 +120,6 @@ with col_controls:
     else: 
         resultado = (((meta - realizado) / meta) + 1) * 100
 
-    resultado_120 = (120-b)/m
-    resultado = max(0, min(resultado, resultado_120))  # limitar entre 0 e 120
-
-    # Métrica personalizada para Resultado
-    st.markdown(f"""
-    <div class="metric-resultado">
-        <div class="metric-label-resultado">Resultado</div>
-        <div class="metric-value-resultado">{resultado:.2f}%</div>
-    </div>
-    """, unsafe_allow_html=True)
     
     # --------- CÁLCULO DE ATINGIMENTO CORRIGIDO ----------
     y_minimo = 45  # Patamar mínimo sempre = 45%
@@ -142,6 +132,16 @@ with col_controls:
         b = y_minimo - m * minimo
         atingimento = b + m * resultado
 
+    resultado_120 = (120-b)/m
+    resultado = max(0, min(resultado, resultado_120))  # limitar entre 0 e 120
+
+    # Métrica personalizada para Resultado
+    st.markdown(f"""
+    <div class="metric-resultado">
+        <div class="metric-label-resultado">Resultado</div>
+        <div class="metric-value-resultado">{resultado:.2f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
     atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
     
