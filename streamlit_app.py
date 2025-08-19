@@ -45,6 +45,7 @@ if sentido == "Maior":
 else:  # Menor
     resultado = (((meta - realizado) / meta) + 1)*100
 
+st.metric("Resultado", f"{resultado:.2f}%")
 # --------- CÁLCULO DE ATINGIMENTO CORRIGIDO ----------
 y_minimo = 45  # Patamar mínimo sempre = 45%
 y_meta = 100   # Meta = 100%
@@ -90,7 +91,8 @@ x_max = max(meta, minimo) + 5
 
 fig.update_layout(
     
-    xaxis_title="Valor do Indicador",
+    # xaxis_title="Valor do Indicador",
+    xaxis_title="Resultado (%)",
     yaxis_title="Atingimento (%)",
     xaxis=dict(range=[x_min, x_max], showgrid=False),
     yaxis=dict(range=[0, 120], showgrid=False),
