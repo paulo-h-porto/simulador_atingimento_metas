@@ -44,7 +44,8 @@ st.markdown(
             border-radius: 12px; }
         .section-title { 
             text-align: center; 
-            margin-bottom: 20px; }
+            margin-bottom: 20px; 
+            background-color: #a3bbb6;}
         .metric-resultado {
             background-color: #1e3a5f !important;
             color: white !important;
