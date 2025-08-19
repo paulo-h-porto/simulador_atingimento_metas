@@ -41,32 +41,32 @@ with col4:
 
 # --------- CÁLCULO DE RESULTADO ----------
 if sentido == "Maior":
-    resultado = realizado / meta
+    resultado = realizado / meta * 100
 else:  # Menor
-    resultado = ((meta - realizado) / meta) + 1
+    resultado = (((meta - realizado) / meta) + 1)*100
 
 # --------- CÁLCULO DE ATINGIMENTO CORRIGIDO ----------
-if sentido == "Maior":
-    # Reta: minimo -> 0%, meta -> 100%
-    m = 100 / (meta - minimo)        # inclinação
-    b = -m * minimo                  # intercepto
-    atingimento_calc = b + m * realizado
-else:  # Menor
-    # Reta invertida: minimo -> 100%, meta -> 0%
-    m = -100 / (meta - minimo)
-    b = 100 - m * minimo
-    atingimento_calc = b + m * realizado
+y_minimo = 45  # Patamar mínimo sempre = 45%
+y_meta = 100   # Meta = 100%
 
-atingimento = max(0, min(atingimento_calc, 120))  # limitar entre 0 e 120
+# Determinar inclinação da reta
+m = (y_meta - y_minimo) / (meta - minimo)
+b = y_minimo - m * minimo
+
+# Se sentido for "Menor", invertemos a lógica da reta
+if sentido == "Menor":
+    m = -m
+    b = y_meta - m * minimo
+
+atingimento = b + m * realizado
+atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
 
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
+
 # --------- CURVA CORRIGIDA ----------
 x_curve = np.linspace(minimo, meta, 50)
-if sentido == 'Maior':
-    y_curve = m * x_curve + b
-else:
-    y_curve = m * x_curve + b
+y_curve = b + m * x_curve
     
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
