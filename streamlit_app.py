@@ -87,14 +87,9 @@ fig.add_trace(go.Scatter(x=[realizado], y=[atingimento], mode='markers', name="R
 x_min = min(meta, minimo) - 5
 x_max = max(meta, minimo) + 5
 
-if sentido == "Maior":
-    xaxis_config = dict(range=[x_min, x_max], showgrid=False)
-else:
-    xaxis_config = dict(range=[x_min, x_max], showgrid=False, autorange="reversed")
-
 
 fig.update_layout(
-    xaxis=xaxis_config,
+    
     xaxis_title="Valor do Indicador",
     yaxis_title="Atingimento (%)",
     xaxis=dict(range=[x_min, x_max], showgrid=False),
