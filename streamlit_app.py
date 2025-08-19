@@ -148,10 +148,10 @@ with col_controls:
     st.markdown('<div class="controls-container">', unsafe_allow_html=True)
     
     st.subheader("Parâmetros")
+    sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
+    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
     meta = st.number_input("Meta:", value=100.0, step=1.0)
     realizado = st.number_input("Realizado:", value=80.0, step=1.0)
-    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
-    sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
     
     # --------- CÁLCULO DE RESULTADO ----------
     if realizado == meta:
@@ -203,7 +203,5 @@ with col_chart:
     st.subheader("Simulação de Atingimento de Meta")
     st.plotly_chart(fig, use_container_width=True)
 
-# --------- FOOTER ----------
-st.markdown('<div class="footer">⚠️ Este painel é uma simulação e não substitui os resultados oficiais.</div>', unsafe_allow_html=True)
 # --------- FOOTER ----------
 st.markdown('<div class="footer">⚠️ Este painel é uma simulação e não substitui os resultados oficiais.</div>', unsafe_allow_html=True)
