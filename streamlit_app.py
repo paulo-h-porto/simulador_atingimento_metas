@@ -113,7 +113,7 @@ fig.add_trace(go.Scatter(x=[meta], y=[100], mode='markers', name="Meta", marker=
 fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="Resultado", marker=dict(color="purple", size=10)))
 
 fig.update_layout(
-    xaxis_title="Valor do Indicador",
+    xaxis_title="Realizado do Indicador",
     yaxis_title="Atingimento (%)",
     yaxis=dict(range=[-5, 125], showgrid=False),  # remove linhas de grade horizontais
     xaxis=dict(showgrid=False),                   # remove linhas de grade verticais
