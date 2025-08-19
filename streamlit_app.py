@@ -159,9 +159,9 @@ with col_chart:
         
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
-    fig.add_trace(go.Scatter(x=[minimo], y=[y_minimo], mode='markers', name="Patamar Mínimo", marker=dict(color="red", size=10)))
-    fig.add_trace(go.Scatter(x=[meta], y=[100], mode='markers', name="Meta", marker=dict(color="green", size=10)))
-    fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="Resultado", marker=dict(color="purple", size=10)))
+    fig.add_trace(go.Scatter(x=[minimo], y=[y_minimo], mode='markers', name="Patamar Mínimo", marker=dict(color="#bc1e43", size=10)))
+    fig.add_trace(go.Scatter(x=[100], y=[100], mode='markers', name="100%", marker=dict(color="#2b2d2c", size=10)))
+    fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="Valor Simulado", marker=dict(color="#41d600", size=12)))
 
     fig.update_layout(
         xaxis_title="Resultado (%)",
