@@ -61,7 +61,7 @@ st.markdown(
             # font-weight: bold;
             color: white; }
         .metric-value-resultado {
-            # font-size: 1.8em;
+            font-size: 1.0em;
             font-weight: bold;
             color: white; }
         .metric-atingimento {
