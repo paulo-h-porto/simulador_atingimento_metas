@@ -51,7 +51,7 @@ st.markdown(
         .metric-resultado {
             background-color: #a3bbb6 !important;
             color: white !important;
-            # padding: 15px;
+            padding: 15px;
             border-radius: 10px;
             border-left: 5px solid #d7e1de;
             # margin: 15px 0px; 
