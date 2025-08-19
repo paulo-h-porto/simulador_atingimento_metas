@@ -49,23 +49,23 @@ st.markdown(
             border-radius: 12px; 
             color: #2b2d2c; }
         .metric-resultado {
-            background-color: #a3bbb6 !important;
+            background-color: #d7e1de !important;
             color: white !important;
-            padding: 15px;
+            padding: 5px;
             border-radius: 10px;
-            border-left: 5px solid #d7e1de;
+            # border-left: 5px solid #d7e1de;
             # margin: 15px 0px; 
             }
         .metric-label-resultado {
             # font-size: 1.0em;
             text-align: center; 
             font-weight: bold;
-            color: white; }
+            color: #2b2d2c; }
         .metric-value-resultado {
             font-size: 1.2em;
             text-align: center; 
             font-weight: bold;
-            color: white; }
+            color: #2b2d2c; }
         .metric-atingimento {
             background-color: #2d5016 !important;
             color: white !important;
