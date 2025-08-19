@@ -56,6 +56,14 @@ st.markdown(
             # border-left: 5px solid #4a90e2;
             # margin: 15px 0px; 
             }
+        .metric-label-resultado {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e0e0e0; }
+        .metric-value-resultado {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2b2d2c; }
         .metric-atingimento {
             background-color: #2d5016 !important;
             color: white !important;
@@ -63,11 +71,11 @@ st.markdown(
             border-radius: 10px;
             border-left: 5px solid #7cb342;
             margin: 15px 0px; }
-        .metric-label {
+        .metric-label-atingimento {
             font-size: 1.1em;
             font-weight: bold;
             color: #e0e0e0; }
-        .metric-value {
+        .metric-value-atingimento {
             font-size: 1.8em;
             font-weight: bold;
             color: white; }
@@ -111,8 +119,8 @@ with col_controls:
     # Métrica personalizada para Resultado
     st.markdown(f"""
     <div class="metric-resultado">
-        <div class="metric-label">Resultado</div>
-        <div class="metric-value">{resultado:.2f}%</div>
+        <div class="metric-label-resultado">Resultado</div>
+        <div class="metric-value-resultado">{resultado:.2f}%</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -132,8 +140,8 @@ with col_controls:
     # Métrica personalizada para Atingimento
     st.markdown(f"""
     <div class="metric-atingimento">
-        <div class="metric-label">Atingimento</div>
-        <div class="metric-value">{atingimento:.2f}%</div>
+        <div class="metric-label-atingimento">Atingimento</div>
+        <div class="metric-value-atingimento">{atingimento:.2f}%</div>
     </div>
     """, unsafe_allow_html=True)
     
