@@ -279,12 +279,12 @@ st.markdown(
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px; }
-        .metrics-row {
+        .metrics-container {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             margin: 20px 0;
         }
-        .metric-column {
+        .metric-box {
             flex: 1;
         }
     </style>
@@ -332,11 +332,11 @@ with col_controls:
         
     atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
     
-    # Criar duas colunas para as métricas lado a lado
-    st.markdown('<div class="metrics-row">', unsafe_allow_html=True)
+    # Container para as métricas lado a lado
+    st.markdown('<div class="metrics-container">', unsafe_allow_html=True)
     
-    # Coluna para Resultado
-    st.markdown('<div class="metric-column">', unsafe_allow_html=True)
+    # Métrica Resultado
+    st.markdown('<div class="metric-box">', unsafe_allow_html=True)
     st.markdown(f"""
     <div class="metric-resultado">
         <div class="metric-label-resultado">Resultado</div>
@@ -345,8 +345,8 @@ with col_controls:
     """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
     
-    # Coluna para Atingimento
-    st.markdown('<div class="metric-column">', unsafe_allow_html=True)
+    # Métrica Atingimento
+    st.markdown('<div class="metric-box">', unsafe_allow_html=True)
     st.markdown(f"""
     <div class="metric-atingimento">
         <div class="metric-label-atingimento">Atingimento</div>
@@ -355,7 +355,7 @@ with col_controls:
     """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
     
-    st.markdown('</div>', unsafe_allow_html=True)  # Fechar metrics-row
+    st.markdown('</div>', unsafe_allow_html=True)  # Fechar metrics-container
     
     st.markdown('</div>', unsafe_allow_html=True)  # Fechar controls-container
 
