@@ -19,7 +19,7 @@ st.markdown(
         .header {
             background-color: #103024;
             padding: 15px;
-            margin: 0px 15px;
+            margin: 15px 0px;
             border-radius: 12px; /* só header arredondado */
             text-align: center;
         }
