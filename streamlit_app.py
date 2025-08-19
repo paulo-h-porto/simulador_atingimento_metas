@@ -47,7 +47,6 @@ st.markdown(
 
         /* Caixas internas (inputs, métricas, gráfico) */
         .block-container {
-            margin: 15px 5px;
             border-radius: 0px !important; /* sem borda arredondada */
         }
 
