@@ -49,29 +49,32 @@ else:  # Menor
 y_minimo = 45  # Patamar mínimo sempre = 45%
 y_meta = 100   # Meta = 100%
 
-# Determinar inclinação da reta
-m = (y_meta - y_minimo) / (meta - minimo)
-b = y_minimo - m * minimo
+if sentido == "Maior":  # melhor para cima
+    m = (y_meta - y_minimo) / (meta - minimo)
+    b = y_minimo - m * minimo
+    if realizado < minimo:
+        atingimento = 0
+    else:
+        atingimento = b + m * realizado
+else:  # melhor para baixo
+    # Inverter a reta: quanto menor o realizado, maior o atingimento
+    m = (y_minimo - y_meta) / (minimo - meta)  # inclinação negativa
+    b = y_meta - m * meta
+    if realizado > minimo:
+        atingimento = 0
+    else:
+        atingimento = b + m * realizado
 
-# Se sentido for "Menor", invertemos a lógica da reta
-if sentido == "Menor":
-    m = -m
-    b = y_meta - m * minimo
-
-if realizado < minimo:
-    atingimento = 0
-else:
-    atingimento = b + m * realizado
-    
 atingimento = max(0, min(atingimento, 120))  # limitar entre 0 e 120
-
-
 st.metric("Atingimento", f"{atingimento:.2f}%")
 
 
 # --------- CURVA CORRIGIDA ----------
 x_curve = np.linspace(minimo, meta, 50)
-y_curve = b + m * x_curve
+if sentido == "Maior":
+    y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (meta - minimo)
+else:
+    y_curve = y_meta + (y_minimo - y_meta) * (x_curve - meta) / (minimo - meta)
     
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#103024")))
