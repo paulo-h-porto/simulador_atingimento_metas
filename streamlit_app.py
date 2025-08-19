@@ -100,8 +100,8 @@ fig.update_layout(
     # xaxis_title="Valor do Indicador",
     xaxis_title="Resultado (%)",
     yaxis_title="Atingimento (%)",
-    xaxis=dict(range=[0, x_max], showgrid=False),
-    yaxis=dict(range=[0, 120], showgrid=False),
+    xaxis=dict(range=[0, 140], showgrid=False),
+    yaxis=dict(range=[0, 140], showgrid=False),
     plot_bgcolor="white"
 )
 
