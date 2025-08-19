@@ -49,12 +49,13 @@ st.markdown(
             border-radius: 12px; 
             color: #2b2d2c; }
         .metric-resultado {
-            background-color: #1e3a5f !important;
-            color: white !important;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 5px solid #4a90e2;
-            margin: 15px 0px; }
+            # background-color: #1e3a5f !important;
+            color: #2b2d2c;
+            # padding: 15px;
+            # border-radius: 10px;
+            # border-left: 5px solid #4a90e2;
+            # margin: 15px 0px; 
+            }
         .metric-atingimento {
             background-color: #2d5016 !important;
             color: white !important;
