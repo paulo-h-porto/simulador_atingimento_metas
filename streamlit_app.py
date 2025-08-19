@@ -45,8 +45,8 @@ st.markdown(
 
         /* Caixa do metric */
         .stMetric {
-            background-color: #e6ffe6;
-            color: #000000;
+            background-color: ##169a00;
+            color: #103024;
             font-weight: bold;
             padding: 12px;
             border-radius: 0px !important;
