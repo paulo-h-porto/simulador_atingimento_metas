@@ -3,7 +3,13 @@ import plotly.graph_objects as go
 import numpy as np
 
 # --------- CONFIG GERAL ----------
-st.set_page_config(page_title="Simulação de Metas 2025", layout="centered")
+# st.set_page_config(page_title="Simulação de Metas 2025", layout="centered")
+st.set_page_config(
+    page_title="Simulação de Metas 2025",
+    page_icon="📊",
+    layout="centered",
+    initial_sidebar_state="collapsed",
+
 
 # --------- CSS CUSTOMIZADO ----------
 st.markdown(
@@ -40,6 +46,7 @@ st.markdown(
 
         /* Caixas internas (inputs, métricas, gráfico) */
         .block-container {
+            margin: 15px 5px;
             border-radius: 0px !important; /* sem borda arredondada */
         }
 
