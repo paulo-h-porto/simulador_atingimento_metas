@@ -155,7 +155,7 @@ with col_controls:
 # --------- GRÁFICO NA COLUNA DA DIREITA ----------
 with col_chart:
     # --------- CURVA CORRIGIDA PARA PLOT ---------
-    x_curve = np.linspace(minimo, 120, 50)
+    x_curve = np.linspace(minimo, resultado_120, 50)
     y_curve = y_minimo + (y_meta - y_minimo) * (x_curve - minimo) / (100 - minimo)
         
     fig = go.Figure()
