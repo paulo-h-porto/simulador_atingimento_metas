@@ -57,8 +57,8 @@ st.markdown(
             # margin: 15px 0px; 
             }
         .metric-label-resultado {
-            font-size: 1.1em;
-            font-weight: bold;
+            font-size: 1.0em;
+            # font-weight: bold;
             color: #e0e0e0; }
         .metric-value-resultado {
             font-size: 1.8em;
@@ -102,11 +102,11 @@ with col_controls:
     st.markdown('<div class="section-title"><h3>Parâmetros</h3></div>', unsafe_allow_html=True)
     
     # Container para os parâmetros
+    sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
+    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
     meta = st.number_input("Meta:", value=100.0, step=1.0)
     realizado = st.number_input("Realizado:", value=80.0, step=1.0)
-    minimo = st.number_input("Patamar Mínimo:", value=45.0, step=1.0)
-    sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
-    st.markdown('</div>', unsafe_allow_html=True)
+    # st.markdown('</div>', unsafe_allow_html=True)
     
     # --------- CÁLCULO DE RESULTADO ----------
     if realizado == meta:
