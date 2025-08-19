@@ -40,13 +40,11 @@ with col4:
     sentido = st.selectbox("Sentido do Indicador:", ["Maior", "Menor"])
 
 # --------- CÁLCULO DE RESULTADO ----------
-if realizado==meta
+if realizado == meta:
     resultado = 100
-    else:
-    if sentido == "Maior":
+elif sentido == "Maior":
     resultado = realizado / meta * 100
-    else:  # Menor
-    resultado = (((meta - realizado) / meta) + 1)*100
+else: resultado = (((meta - realizado) / meta) + 1) * 100
 
 st.metric("Resultado", f"{resultado:.2f}%")
 # --------- CÁLCULO DE ATINGIMENTO CORRIGIDO ----------
