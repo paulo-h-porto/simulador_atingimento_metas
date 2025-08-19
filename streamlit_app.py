@@ -20,7 +20,8 @@ st.markdown(
         #     color: #ffffff; }
         .header { 
             margin: 0px 0px 20px; 
-            background-color: #103024; 
+            # background-color: #103024; 
+            background-color: #1b4c22;
             padding: 15px; 
             border-radius: 12px; 
             text-align: center; }
