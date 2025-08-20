@@ -190,5 +190,24 @@ with col_chart:
 # --------- FOOTER ----------
 st.markdown('<div class="footer">⚠️ Este painel é uma simulação e não substitui os resultados oficiais.</div>', unsafe_allow_html=True)
 
+# --------- LEGENDA (Inputs e Outputs) ----------
+st.markdown(
+    """
+    <div style="margin-top:20px; padding:15px; border-radius:12px; background-color:#f5f5f5; color:#2b2d2c;">
+        <h4 style="margin-bottom:10px;">📌 Legenda dos Parâmetros e Resultados</h4>
+        <ul style="margin:0; padding-left:20px; line-height:1.6;">
+            <li><b>Sentido do Indicador:</b> Define se o desempenho é melhor quando o valor é <i>maior</i> ou <i>menor</i>.</li>
+            <li><b>Patamar Mínimo:</b> Valor mínimo necessário para iniciar o cálculo de atingimento.</li>
+            <li><b>Meta:</b> Valor definido como objetivo (100%).</li>
+            <li><b>Realizado:</b> Valor efetivamente alcançado.</li>
+            <li><b style="background-color:#d7e1de; color:#2b2d2c; padding:3px 6px; border-radius:6px;">Resultado:</b> Percentual calculado em relação à meta (0% a 120%).</li>
+            <li><b style="background-color:#2d5016; color:white; padding:3px 6px; border-radius:6px;">Atingimento:</b> Percentual ajustado que considera o patamar mínimo e a curva de atingimento.</li>
+        </ul>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 
