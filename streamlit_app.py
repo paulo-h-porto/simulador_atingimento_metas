@@ -194,8 +194,8 @@ st.markdown('<div class="footer">⚠️ Este painel é uma simulação e não su
 st.markdown(
     """
     <div style="margin-top:20px; padding:15px; border-radius:12px; background-color:#f5f5f5; color:#2b2d2c;">
-        <h4 style="margin-bottom:10px;">📌 Legenda dos Parâmetros e Resultados</h4>
-        <ul style="margin:0; padding-left:20px; line-height:1.6;">
+        <h4 style="margin-bottom:10px;">📌 Legenda:</h4>
+        <ul style="margin:0; padding-left:20px; line-height:2.0;">
             <li><b>Sentido do Indicador:</b> Define se o desempenho é melhor quando o valor é <i>maior</i> ou <i>menor</i>.</li>
             <li><b>Patamar Mínimo:</b> Valor mínimo necessário para iniciar o cálculo de atingimento.</li>
             <li><b>Meta:</b> Valor definido como objetivo (100%).</li>
