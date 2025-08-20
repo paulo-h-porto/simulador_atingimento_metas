@@ -169,7 +169,7 @@ with col_chart:
         
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=x_curve, y=y_curve, mode='lines', name="Curva de Atingimento", line=dict(color="#666d6a")))
-    fig.add_trace(go.Scatter(x=[minimo], y=[y_minimo], mode='markers', name="Patamar Mínimo", marker=dict(color="#6e1632", size=8)))
+    fig.add_trace(go.Scatter(x=[minimo], y=[y_minimo], mode='markers', name="Patamar Mínimo (%)", marker=dict(color="#6e1632", size=8)))
     fig.add_trace(go.Scatter(x=[100], y=[100], mode='markers', name="100%", marker=dict(color="#156b6a", size=8)))
     fig.add_trace(go.Scatter(x=[resultado_120_graf], y=[120], mode='markers', name="120%", marker=dict(color="#103024", size=8)))
     fig.add_trace(go.Scatter(x=[resultado], y=[atingimento], mode='markers', name="Valor Simulado", marker=dict(color="#41d600", size=12)))
